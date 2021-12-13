@@ -45,10 +45,10 @@ function CartaPergunta (props) {
     
     if (valor === 0){
         return (
-            <div className="carta">
-                <span>{parametro.indice}</span>
+            <div className="carta" data-identifier="flashcard">
+                <span data-identifier="counter">{parametro.indice}</span>
                 <p className="pergunta">{parametro.pergunta}</p>
-                <ion-icon name="arrow-undo" onClick={() => setValor(1)}></ion-icon>
+                <ion-icon name="arrow-undo" onClick={() => setValor(1)} data-identifier="arrow"></ion-icon>
             </div>
         );
     }else if(valor === 1){
@@ -68,9 +68,9 @@ function CartaResposta(props) { //mudar layout da carta qnd o usuário der o fee
     if (valorProximo === 0){
         if (valorFeedback === ""){
             return (
-                <div className={"carta " + valorFeedback} >
+                <div className={"carta " + valorFeedback} data-identifier="flashcard">
                     <h2 className="enunciado">{parametro.enunciado}</h2>
-                    <span>{parametro.indice}</span>
+                    <span data-identifier="counter">{parametro.indice}</span>
                     <p className="resposta">{parametro.resposta}</p>
                     
                     <Feedback setValorFeedback={setValorFeedback}/>
@@ -79,9 +79,9 @@ function CartaResposta(props) { //mudar layout da carta qnd o usuário der o fee
             );
         }else if (valorFeedback !== ""){
             return (
-                <div className={"carta " + valorFeedback} >
+                <div className={"carta " + valorFeedback} data-identifier="flashcard">
                     <h2 className="enunciado">{parametro.enunciado}</h2>
-                    <span>{parametro.indice}</span>
+                    <span data-identifier="counter">{parametro.indice}</span>
                     <p className="resposta">{parametro.resposta}</p>
                     
                     <Proxima setValorProximo={setValorProximo}/>

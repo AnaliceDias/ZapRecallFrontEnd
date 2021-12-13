@@ -11,7 +11,7 @@ export default function Tela1 (){
                 <ion-icon name="flash-outline"></ion-icon>
                 <h2>ZapRecall</h2>
                {/*<input placeholder="Sua meta de zaps"></input> */} 
-                <button onClick={() => setValor(1)}>
+                <button data-identifier="start-zap-recall" onClick={() => setValor(1)}>
                     <p>Praticar React</p> 
                 <ion-icon name="play-forward"></ion-icon>
                 </button>
